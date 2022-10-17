@@ -14,8 +14,22 @@ const { NotImplementedError } = require('../extensions/index.js');
  * 
  */
 function transform(/* arr */) {
-  throw new NotImplementedError('Not implemented');
-  // remove line with error and write your code here
+  console.log(arguments[0])
+  const newArr = [];
+  for (i = 0; i < arguments[0].length; i++) {
+    if (typeof arguments[0][i] === 'number') {
+      newArr.push(arguments[0][i]);
+    } else {
+      if (arguments[0][i] === '--discard-prev') {
+        newArr.pop();
+      } else if (arguments[0][i] === '--discard-next') {
+        i++
+      } else if (arguments[0][i] === '--double-prev') {
+        newArr.push(arguments[0][i-1]);
+      } else if (arguments[0][i] === '--double-next') {
+        
+      }
+    }
 }
 
 module.exports = {
