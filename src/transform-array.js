@@ -27,9 +27,11 @@ function transform(/* arr */) {
       } else if (arguments[0][i] === '--double-prev') {
         newArr.push(arguments[0][i-1]);
       } else if (arguments[0][i] === '--double-next') {
-        
+        newArr.push(arguments[0][i+1]);
       }
     }
+  }
+  return newArr  
 }
 
 module.exports = {
